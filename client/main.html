@@ -1,0 +1,21 @@
+<head>
+	<title>band-members</title>
+</head>
+
+<body>
+{{> BandMembers}}
+</body>
+
+<template name="BandMembers">
+	<h3>Band Members</h3>
+	<ul class="list-group">
+		{{#each member in members}}
+			<li class="list-group-item">
+				{{member.name}} - {{member.instrument}}
+			</li>
+		{{/each}}
+	</ul>
+
+	<h3>Add a New Member</h3>
+	{{> quickForm collection=getCollection id="insertMember" type="insert"}}
+</template>
