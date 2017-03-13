@@ -1,12 +1,26 @@
 <head>
-	<title>band-members</title>
+	<title>Soccer Player Info</title>
 </head>
 
 <body>
-{{> BandMembers}}
+{{> Players}}
+<!-- {{> BandMembers}} -->
 </body>
 
-<template name="BandMembers">
+<template name="Players">
+	<h3>Players</h3>
+	<ul class='list-group'>
+		{{#each player in players}}
+		<li class="list-group-item">
+			{{player.name}} - {{player.number}} - {{player.position}}
+		</li>
+		{{/each}}
+	</ul>
+	<h3>Add a new Player</h3>
+	{{> quickform collection=getCollection id="insertPlayer" type="insert"}}
+</template>
+
+<!-- <template name="BandMembers">
 	<h3>Band Members</h3>
 	<ul class="list-group">
 		{{#each member in members}}
@@ -18,4 +32,4 @@
 
 	<h3>Add a New Member</h3>
 	{{> quickForm collection=getCollection id="insertMember" type="insert"}}
-</template>
+</template> -->
