@@ -1,35 +1,38 @@
 <head>
 	<title>Soccer Player Info</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://unpkg.com/blaze">
 </head>
 
 <body>
-{{> Players}}
-<!-- {{> BandMembers}} -->
+	{{> Navbar}}
+	{{> Players}}
 </body>
+
+<template name="Navbar">
+	<div id="navbar" class="navbar u-center-block">
+		<div class="u-center-block__content u-center-block__content--horizontal">
+			<h3>Soccer Player Info</h3>
+		</div>
+	</div>
+</template>
 
 <template name="Players">
 	<h3>Players</h3>
 	<ul class='list-group'>
 		{{#each player in players}}
 		<li class="list-group-item">
-			{{player.name}} - {{player.number}} - {{player.position}}
+			<div class="c-card u-high">
+				<div class="c-card__item c-card__item--brand">{{player.name}}</div>
+				<div class="c-card__item">
+					{{player.number}}
+					{{player.position}}
+				</div>
+			</div>
+			<!-- {{player.name}} - {{player.number}} - {{player.position}} -->
 		</li>
 		{{/each}}
 	</ul>
 	<h3>Add a new Player</h3>
-	{{> quickform collection=getCollection id="insertPlayer" type="insert"}}
+	<!-- {{> quickform collection=getCollection id="insertPlayer" type="insert"}} -->
 </template>
-
-<!-- <template name="BandMembers">
-	<h3>Band Members</h3>
-	<ul class="list-group">
-		{{#each member in members}}
-			<li class="list-group-item">
-				{{member.name}} - {{member.instrument}}
-			</li>
-		{{/each}}
-	</ul>
-
-	<h3>Add a New Member</h3>
-	{{> quickForm collection=getCollection id="insertMember" type="insert"}}
-</template> -->
