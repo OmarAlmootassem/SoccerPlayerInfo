@@ -12,7 +12,7 @@ const GameStats = new Mongo.Collection('gameStats');
 // you don't want a form.
 const GamesSchema = new SimpleSchema({
 	date: {
-		type: Date,
+		type: String,
 		label: 'Date of Match'
 	},
 	opponent: {
@@ -26,6 +26,10 @@ const GamesSchema = new SimpleSchema({
 	score: {
 		type: String,
 		label: 'Score'
+	},
+	id: {
+		type: Number,
+		label: 'ID'
 	}
 });
 

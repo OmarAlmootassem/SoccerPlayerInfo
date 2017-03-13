@@ -16,8 +16,8 @@ const PlayersSchema = new SimpleSchema({
 		label: 'Player Name'
 	},
 	game: {
-		type: String,
-		label: 'Opponent'
+		type: Number,
+		label: 'Game ID'
 	},
 	goals: {
 		type: Number,

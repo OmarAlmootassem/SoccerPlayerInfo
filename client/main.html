@@ -10,16 +10,15 @@
 </body>
 
 <template name="Navbar">
-	<div id="navbar" class="navbar u-center-block">
-		<div class="u-center-block__content u-center-block__content--horizontal">
-			<h3>Soccer Player Info</h3>
-		</div>
-	</div>
+	<ul class="c-nav c-nav--inline">
+		<li class="c-nav__content">Soccer Player Info</li>
+		<li class="c-nav__item c-nav__item--right">Add Game</li>
+	</ul>
 </template>
 
 <template name="Players">
 	<ul class='o-grid o-grid--wrap'>
-		{{#each player in players}}
+		{{#each player in fullStats}}
 		<li class="o-grid__cell" style="margin: 2em;">
 			<div class="c-card u-high" style="width: 500px">
 				<div class="c-card__item c-card__item--brand">{{player.name}}</div>
@@ -38,7 +37,7 @@
 							<span>Total Goals Scored: </span>
 						</div>
 						<div class="o-grid__cell--width-50">
-							<span>43</span>
+							<span>{{player.goals}}</span>
 						</div>
 					</div>
 					<div class="o-grid">
@@ -46,7 +45,7 @@
 							<span>% Scored During Wins: </span>
 						</div>
 						<div class="o-grid__cell--width-50">
-							<span>76%</span>
+							<span>{{player.wins}}%</span>
 						</div>
 					</div>
 					<div class="o-grid">
@@ -54,7 +53,7 @@
 							<span>% Scored During Losses: </span>
 						</div>
 						<div class="o-grid__cell--width-50">
-							<span>20%</span>
+							<span>{{player.losses}}%</span>
 						</div>
 					</div>
 				</div>
