@@ -18,21 +18,48 @@
 </template>
 
 <template name="Players">
-	<h3>Players</h3>
-	<ul class='list-group'>
+	<ul class='o-grid o-grid--wrap'>
 		{{#each player in players}}
-		<li class="list-group-item">
-			<div class="c-card u-high">
+		<li class="o-grid__cell" style="margin: 2em;">
+			<div class="c-card u-high" style="width: 500px">
 				<div class="c-card__item c-card__item--brand">{{player.name}}</div>
 				<div class="c-card__item">
-					{{player.number}}
-					{{player.position}}
+					<div class="o-grid">
+						<div class="o-grid__cell--width-20">
+							<div class="c-avatar c-avatar u-xlarge" data-text="{{player.number}}"></div>
+						</div>
+						<div class="o-grid__cell">
+							<h3>{{player.position}}</h3>
+						</div>
+					</div>
+					<h4>In Game Statistics</h4>
+					<div class="o-grid c-text--loud">
+						<div class="o-grid__cell--width-50">
+							<span>Total Goals Scored: </span>
+						</div>
+						<div class="o-grid__cell--width-50">
+							<span>43</span>
+						</div>
+					</div>
+					<div class="o-grid">
+						<div class="o-grid__cell--width-50">
+							<span>% Scored During Wins: </span>
+						</div>
+						<div class="o-grid__cell--width-50">
+							<span>76%</span>
+						</div>
+					</div>
+					<div class="o-grid">
+						<div class="o-grid__cell--width-50">
+							<span>% Scored During Losses: </span>
+						</div>
+						<div class="o-grid__cell--width-50">
+							<span>20%</span>
+						</div>
+					</div>
 				</div>
 			</div>
-			<!-- {{player.name}} - {{player.number}} - {{player.position}} -->
 		</li>
 		{{/each}}
 	</ul>
-	<h3>Add a new Player</h3>
-	<!-- {{> quickform collection=getCollection id="insertPlayer" type="insert"}} -->
 </template>
