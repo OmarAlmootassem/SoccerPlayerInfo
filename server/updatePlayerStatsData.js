@@ -1,5 +1,5 @@
 /**
- * Created by szimmers on 2017-02-07.
+ * Created by Omar on 2017-03-13.
  */
 
 import {Meteor} from 'meteor/meteor';
@@ -7,7 +7,7 @@ import {PlayerStats} from '/collections/playerStats';
 import {PlayerStatsData} from '/server/playerStatsData';
 
 /**
- * this ensures the in-app band member data is persisted to the database. it matches on name, doing
+ * this ensures the in-app player stats data is persisted to the database. it matches on name, doing
  * an insert if it doesn't exist, or an update if it does.
  */
 Meteor.startup(() => {

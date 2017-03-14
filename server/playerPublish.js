@@ -1,11 +1,11 @@
 /**
- * Created by szimmers on 2017-02-07.
+ * Created by Omar on 2017-03-13.
  */
 
 import {Players} from '/collections/players';
 
 /**
- * upon request, publish the band members
+ * upon request, publish the players
  */
 Meteor.publish('players', function() {
 	// there's no filtering here, so all records in the collection will be returned.
